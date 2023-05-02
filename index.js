@@ -1,6 +1,6 @@
 //-------------FILE Read/Write-------------------
 
-// const fs = require('fs');
+  const fs = require('fs');
 //Blocking Synchronous Code
 // const textin = fs.readFileSync('./txt/input.txt','utf-8');
 // const textout = `This what we know about avocado: ${textin} \n Creted on: ${Date.now()}`;
@@ -28,14 +28,22 @@
 
 const http = require('http');
 const url = require('url');
-
+const data = fs.readFileSync(`${__dirname}/dev-data/data.json`,'utf-8');
+const parsedData = JSON.parse(data);
 
 const server = http.createServer((req,res) => {
 	const pathName = req.url;
 	if(pathName === '/' || pathName === '/overview')
 		res.end("This is Overview");
 	else if(pathName === '/product')
-		res.end("This is product")
+		res.end("This is product");
+	else if(pathName === '/api')
+	{
+		res.end(data);
+		res.writeHead(404,{
+			'Content-type' : 'application/json'
+		})
+	}
 	else
 	{
 		res.writeHead(404,{
@@ -48,3 +56,7 @@ const server = http.createServer((req,res) => {
 server.listen(8000,'127.0.0.1', () => {
 	console.log("Listening to requests on port 8000.");
 })
+
+
+// ./ means the directory from which the script is runnimg
+// while ${__dirname}/ means current file's directory.

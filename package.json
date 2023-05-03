@@ -1,0 +1,22 @@
+{
+  "name": "node-farm",
+  "version": "1.0.0",
+  "description": "Node js training",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abdul-hanan-1/node-training.git"
+  },
+  "author": "Hanan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/abdul-hanan-1/node-training/issues"
+  },
+  "homepage": "https://github.com/abdul-hanan-1/node-training#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  }
+}

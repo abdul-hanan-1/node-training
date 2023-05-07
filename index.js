@@ -71,6 +71,11 @@ const server = http.createServer((req, res) => {
     res.writeHead(200, {
       'Content-type': 'application/json',
     });
+  } else if (pathname === '/about') {
+    res.end('This is about page.');
+    res.writeHead(200, {
+      'Content-type': 'text',
+    });
   } else {
     res.writeHead(404, {
       'Content-type': 'text/html',
